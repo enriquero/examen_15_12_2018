@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}  {# importo el template base #}
+
+{# completo los bloques definidos en el template base#}
+
+{% block title %}Listado{% endblock %}
+{% block head %}
+
+{{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+
+{% block header %}
+<div>
+{% if usuario_logeado %}
+    <a href="./index.php">Home</a> || 
+    <a href="./index.php?action=mensaje_seguidos">Mensajes de seguidos</a> || 
+    <a href="./index.php?action=mensaje_list">Mensajes publicos</a> || 
+    <a href="./index.php?action=mensaje_add">Agregar un mensaje</a> || 
+    <label>{{ usuario_logeado.nombre }} {{ usuario_logeado.apellido }}</label> || 
+    <a href="./index.php?action=logout">Salir</a>
+{% else %}
+    <label>Ingresa para acceder a mas funcionalidades</label>
+{% endif %}
+</div>
+{% endblock %}
+
+{% if mensajes %}
+<h1> Mensajes: </h1>
+<ul>
+{% for mensaje in mensajes %}
+    <li>{{ mensaje.mensaje }} || {{ mensaje.fecha_publicacion }} || {{ mensaje.usuario.nombre }} || {{ mensaje.usuario.apellido }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<h1> No hay mensajes </h1>
+{% endif %}
+
+{% endblock %}

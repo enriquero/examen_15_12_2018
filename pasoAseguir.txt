@@ -1,0 +1,18 @@
+* Configurar GIT, usuario y contraseña que te dan de la catedra
+	$ git config --global user.name "John Doe"
+	$ git config --global user.email johndoe@example.com
+* Clonar repo del parcial
+* Armar estructura MVC, importar los archivos de cada modulo que hice al index, agregar session_start en index asi evito repetirlo en todos lados
+* Armar rutas
+* Hacer login
+	-registrar sesion
+* Hacer logout
+	-borrar la sesion
+* Verificar logeo en cada accion que me piden hacer
+	caso positivo(esta logeado)->seguir con la accion
+	caso negativo(no esta logeado)-> direccionar a algun lado (no usar echo, en el contralador)
+* Realizar las consultas a la base mediante PDO, todas juntas o de a una a medida que se necesite en la accion
+* Procesar y invocar a la vista
+* Definir un mensaje de error en caso de ser necesario y mandarselo a la vista para mostrar(no usar echo, print, etc..)
+* Armar una vista simple en html
+* Tratar de armar template para evitar codigo repetido en html
